@@ -1,0 +1,32 @@
+# Dependencias principales
+MetaTrader5==5.0.38
+pandas==2.1.0
+numpy==1.24.3
+matplotlib==3.7.2
+plotly==5.17.0
+customtkinter==5.2.0
+PyYAML==6.0
+python-dotenv==1.0.0
+SQLAlchemy==2.0.19
+ta==0.10.2
+
+# Backtesting y optimización
+scipy==1.11.2
+scikit-learn==1.3.0
+tqdm==4.65.0
+
+# Testing
+pytest==7.4.2
+pytest-cov==4.1.0
+
+# Utilidades
+loguru==0.7.2
+schedule==1.2.0
+rich==13.5.2
+
+# Interfaz
+pillow==10.0.0
+
+# Para Windows específicamente
+pywin32==306
+winshell==0.6
