@@ -1,0 +1,22 @@
+2025-12-06 14:34:53 | INFO     | __main__:main:448 - ============================================================
+2025-12-06 14:34:53 | INFO     | __main__:main:449 - INICIANDO BOT DE TRADING
+2025-12-06 14:34:53 | INFO     | __main__:main:450 - ============================================================
+2025-12-06 14:34:53 | INFO     | __main__:main:451 - Modo: cli
+2025-12-06 14:34:53 | INFO     | __main__:main:452 - Configuración: configs/config.yml
+2025-12-06 14:34:53 | INFO     | __main__:main:453 - Log level: INFO
+2025-12-06 14:34:53 | INFO     | __main__:modo_cli:81 - Iniciando modo línea de comandos...
+2025-12-06 14:34:54 | ERROR    | __main__:modo_cli:119 - Error en modo CLI: cannot import name 'ConfigIndicadores' from 'configs.config_manager' (C:\Users\ASUS\Documents\Bots\Binance\bot 2\configs\config_manager.py)
+2025-12-06 14:34:54 | ERROR    | __main__:modo_cli:121 - Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\Bots\Binance\bot 2\main.py", line 83, in modo_cli
+    from core.bot import BotTrading
+  File "C:\Users\ASUS\Documents\Bots\Binance\bot 2\core\__init__.py", line 5, in <module>
+    from .bot import BotTrading
+  File "C:\Users\ASUS\Documents\Bots\Binance\bot 2\core\bot.py", line 10, in <module>
+    from configs.config_manager import ConfigManager
+  File "C:\Users\ASUS\Documents\Bots\Binance\bot 2\configs\__init__.py", line 5, in <module>
+    from .config_manager import ConfigManager, ConfigMT5, ConfigIndicadores, ConfigRiesgo
+ImportError: cannot import name 'ConfigIndicadores' from 'configs.config_manager' (C:\Users\ASUS\Documents\Bots\Binance\bot 2\configs\config_manager.py)
+
+2025-12-06 14:34:54 | INFO     | __main__:main:480 - ============================================================
+2025-12-06 14:34:54 | INFO     | __main__:main:481 - BOT DE TRADING FINALIZADO
+2025-12-06 14:34:54 | INFO     | __main__:main:482 - ============================================================

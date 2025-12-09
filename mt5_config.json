@@ -1,0 +1,8 @@
+{
+  "tipo_proyecto": "Bot MT5 Python",
+  "estructura": {},
+  "dependencias_mt5": [
+    "MetaTrader5==5.0.38"
+  ],
+  "configuraciones": {}
+}

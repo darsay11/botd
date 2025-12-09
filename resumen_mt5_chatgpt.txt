@@ -1,0 +1,156 @@
+PROYECTO: Bot de Trading para MetaTrader 5 (MT5)
+======================================================================
+
+DESCRIPCIÓN:
+Bot de trading automatizado para MetaTrader 5 desarrollado en Python
+
+ESTRUCTURA PRINCIPAL:
+----------------------------------------
+📁 backtest/
+📁 bot/
+📁 configs/
+📁 core/
+📁 data/
+📁 execution/
+📁 reports/
+📁 risk/
+📁 scripts/
+📁 sord/
+📁 strategies/
+📁 tests/
+📁 tests_backup/
+📁 ui/
+
+ARCHIVOS CLAVE MT5:
+----------------------------------------
+• exportar_bot_mt5.py
+• main.py
+• configs\config_manager.py
+• core\bot.py
+• data\market_data.py
+• execution\broker.py
+• scripts\iniciar_bot_seguro.py
+• scripts\test_exness.py
+• ui\main_window.py
+
+DEPENDENCIAS PRINCIPALES:
+----------------------------------------
+MetaTrader5==5.0.38
+pandas==2.1.0
+numpy==1.24.3
+matplotlib==3.7.2
+plotly==5.17.0
+customtkinter==5.2.0
+PyYAML==6.0
+python-dotenv==1.0.0
+SQLAlchemy==2.0.19
+ta==0.10.2
+scipy==1.11.2
+scikit-learn==1.3.0
+tqdm==4.65.0
+pytest==7.4.2
+pytest-cov==4.1.0
+loguru==0.7.2
+schedule==1.2.0
+rich==13.5.2
+pillow==10.0.0
+pywin32==306
+winshell==0.6
+
+CÓDIGO DE CONEXIÓN MT5 (ejemplo):
+----------------------------------------
+
+Archivo: exportar_bot_mt5.py
+  # exportar_bot_mt5.py
+  indicadores_mt5.append(os.path.relpath(filepath, RUTA_PROYECTO))
+  archivos_clave_mt5.append(os.path.relpath(filepath, RUTA_PROYECTO))
+  'mt5.initialize', 'mt5.shutdown', 'mt5.login'
+  'order_send', 'mt5.order_send', 'mt5.orders_get'
+  if 'import mt5' in pf.read() or 'import MetaTrader5' in pf.read():
+  if 'mt5.' in linea or 'MetaTrader5' in linea:
+  if 'mt5' in pf.read() or 'MetaTrader5' in pf.read():
+  if 'mt5.initialize(' in contenido:
+  if 'mt5.' in linea or 'MetaTrader5' in linea:
+  if 'mt5' in contenido or 'MetaTrader5' in contenido:
+
+Archivo: core\bot.py
+  ﻿import MetaTrader5 as mt5
+  mt5_config = self.config.mt5.to_dict()
+  if not mt5.initialize(**mt5_config):
+  error = mt5.last_error()
+  cuenta = mt5.account_info()
+  seleccionado = mt5.symbol_select(simbolo, True)
+  tick = mt5.symbol_info_tick(simbolo)
+  mt5.shutdown()
+  "balance": mt5.account_info().balance if self.conectado else 0.0
+
+Archivo: data\market_data.py
+  import MetaTrader5 as mt5
+  'M1': mt5.TIMEFRAME_M1,
+  'M5': mt5.TIMEFRAME_M5,
+  'M15': mt5.TIMEFRAME_M15,
+  'H1': mt5.TIMEFRAME_H1,
+  'H4': mt5.TIMEFRAME_H4,
+  'D1': mt5.TIMEFRAME_D1
+  if not mt5.initialize(
+  path=config_mt5.ruta_terminal,
+  login=config_mt5.login,
+  password=config_mt5.password,
+  server=config_mt5.servidor
+  logger.error(f"Error inicializando MT5: {mt5.last_error()}")
+  logger.info(f"Conectado a MT5: {config_mt5.servidor}")
+  mt5.shutdown()
+  velas = mt5.copy_rates_from_pos(simbolo, tf_mt5, 0, numero_velas)
+  tick = mt5.symbol_info_tick(simbolo)
+
+Archivo: execution\broker.py
+  import MetaTrader5 as mt5
+  if not mt5.initialize():
+  error_msg = f"Error inicializando MT5: {mt5.last_error()}"
+  mt5.shutdown()
+  tipo_orden = mt5.ORDER_TYPE_BUY
+  precio = mt5.symbol_info_tick(orden.simbolo).ask
+  tipo_orden = mt5.ORDER_TYPE_SELL
+  precio = mt5.symbol_info_tick(orden.simbolo).bid
+  "action": mt5.TRADE_ACTION_DEAL,
+  "type_time": mt5.ORDER_TIME_GTC,
+  "type_filling": mt5.ORDER_FILLING_IOC,
+  resultado = mt5.order_send(request)
+  if resultado.retcode == mt5.TRADE_RETCODE_DONE:
+  ordenes = mt5.orders_get(ticket=ticket)
+  "action": mt5.TRADE_ACTION_MODIFY,
+  "type_time": mt5.ORDER_TIME_GTC,
+  resultado = mt5.order_send(request)
+  if resultado.retcode == mt5.TRADE_RETCODE_DONE:
+  posiciones = mt5.positions_get(ticket=ticket)
+  if posicion.type == mt5.POSITION_TYPE_BUY:
+  tipo_orden = mt5.ORDER_TYPE_SELL
+  precio = mt5.symbol_info_tick(posicion.symbol).bid
+  elif posicion.type == mt5.POSITION_TYPE_SELL:
+  tipo_orden = mt5.ORDER_TYPE_BUY
+  precio = mt5.symbol_info_tick(posicion.symbol).ask
+  "action": mt5.TRADE_ACTION_DEAL,
+  "type_time": mt5.ORDER_TIME_GTC,
+  "type_filling": mt5.ORDER_FILLING_IOC,
+  resultado = mt5.order_send(request)
+  if resultado.retcode == mt5.TRADE_RETCODE_DONE:
+  posiciones = mt5.positions_get()
+  'tipo': 'COMPRA' if pos.type == mt5.POSITION_TYPE_BUY else 'VENTA',
+  ordenes = mt5.orders_get()
+  cuenta = mt5.account_info()
+  mt5.ORDER_TYPE_BUY: "COMPRA",
+  mt5.ORDER_TYPE_SELL: "VENTA",
+  mt5.ORDER_TYPE_BUY_LIMIT: "COMPRA_LIMIT",
+  mt5.ORDER_TYPE_SELL_LIMIT: "VENTA_LIMIT",
+  mt5.ORDER_TYPE_BUY_STOP: "COMPRA_STOP",
+  mt5.ORDER_TYPE_SELL_STOP: "VENTA_STOP"
+
+Archivo: scripts\test_exness.py
+  import MetaTrader5 as mt5
+  if not mt5.initialize(
+  error = mt5.last_error()
+  account = mt5.account_info()
+  symbols = mt5.symbols_get()
+  rates = mt5.copy_rates_from(symbol_test, mt5.TIMEFRAME_H1,
+  symbol_info = mt5.symbol_info(symbol_test)
+  mt5.shutdown()

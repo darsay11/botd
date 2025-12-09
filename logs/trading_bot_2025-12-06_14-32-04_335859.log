@@ -1,0 +1,12 @@
+2025-12-06 14:32:04 | INFO     | __main__:main:448 - ============================================================
+2025-12-06 14:32:04 | INFO     | __main__:main:449 - INICIANDO BOT DE TRADING
+2025-12-06 14:32:04 | INFO     | __main__:main:450 - ============================================================
+2025-12-06 14:32:04 | INFO     | __main__:main:451 - Modo: gui
+2025-12-06 14:32:04 | INFO     | __main__:main:452 - Configuración: configs/config.yml
+2025-12-06 14:32:04 | INFO     | __main__:main:453 - Log level: INFO
+2025-12-06 14:32:04 | INFO     | __main__:modo_gui:54 - Iniciando interfaz gráfica...
+2025-12-06 14:32:05 | ERROR    | __main__:modo_gui:71 - Error importando módulos de GUI: cannot import name 'ErrorConfiguracion' from 'core.exceptions' (C:\Users\ASUS\Documents\Bots\Binance\bot 2\core\exceptions.py)
+2025-12-06 14:32:05 | INFO     | __main__:modo_gui:72 - Instala customtkinter: pip install customtkinter
+2025-12-06 14:32:05 | INFO     | __main__:main:480 - ============================================================
+2025-12-06 14:32:05 | INFO     | __main__:main:481 - BOT DE TRADING FINALIZADO
+2025-12-06 14:32:05 | INFO     | __main__:main:482 - ============================================================

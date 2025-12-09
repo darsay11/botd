@@ -1,0 +1,11 @@
+2025-12-06 18:50:52 | INFO     | __main__:main:448 - ============================================================
+2025-12-06 18:50:52 | INFO     | __main__:main:449 - INICIANDO BOT DE TRADING
+2025-12-06 18:50:52 | INFO     | __main__:main:450 - ============================================================
+2025-12-06 18:50:52 | INFO     | __main__:main:451 - Modo: gui
+2025-12-06 18:50:52 | INFO     | __main__:main:452 - Configuración: configs/config.yml
+2025-12-06 18:50:52 | INFO     | __main__:main:453 - Log level: INFO
+2025-12-06 18:50:52 | INFO     | __main__:modo_gui:54 - Iniciando interfaz gráfica...
+2025-12-06 18:50:57 | INFO     | __main__:modo_gui:68 - Interfaz gráfica finalizada
+2025-12-06 18:50:57 | INFO     | __main__:main:480 - ============================================================
+2025-12-06 18:50:57 | INFO     | __main__:main:481 - BOT DE TRADING FINALIZADO
+2025-12-06 18:50:57 | INFO     | __main__:main:482 - ============================================================

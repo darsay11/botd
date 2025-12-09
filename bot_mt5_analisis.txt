@@ -1,0 +1,62 @@
+🤖 BOT METATRADER 5 (MT5) - ANÁLISIS COMPLETO
+================================================================================
+
+🔍 COMPONENTES MT5 IDENTIFICADOS:
+----------------------------------------
+
+📂 CONEXION:
+   • exportar_bot_mt5.py
+   • main.py
+   • core\bot.py
+   • data\market_data.py
+   • execution\broker.py
+   ... y 1 más
+
+📂 ESTRATEGIAS:
+   • exportar_bot_trading.py
+   • backtest\backtest_engine.py
+   • configs\config_manager.py
+   • strategies\advanced_strategy.py
+   • strategies\base_strategy.py
+   ... y 3 más
+
+================================================================================
+📄 CÓDIGO PRINCIPAL MT5:
+----------------------------------------
+
+
+============================================================
+ARCHIVO: exportar_bot_mt5.py
+============================================================
+
+Total líneas: 436
+
+IMPORTS:
+  import os
+  import sys
+  import zipfile
+  import json
+  from pathlib import Path
+
+DEFINICIONES PRINCIPALES:
+  def verificar_proyecto_mt5():
+  def exportar_bot_mt5():
+  def crear_analisis_mt5(output_file):
+  def crear_config_mt5(output_file):
+  def crear_resumen_chatgpt(output_file):
+  def crear_zip_mt5(output_file):
+  def mostrar_resumen_exportacion():
+  def main_mt5():
+
+LLAMADAS MT5 DESTACADAS:
+  # exportar_bot_mt5.py
+  indicadores_mt5.append(os.path.relpath(filepath, RUTA_PROYECTO))
+  archivos_clave_mt5.append(os.path.relpath(filepath, RUTA_PROYECTO))
+  'mt5.initialize', 'mt5.shutdown', 'mt5.login'
+  'order_send', 'mt5.order_send', 'mt5.orders_get'
+  if 'import mt5' in pf.read() or 'import MetaTrader5' in pf.read():
+  if 'mt5.' in linea or 'MetaTrader5' in linea:
+  if 'mt5' in pf.read() or 'MetaTrader5' in pf.read():
+  if 'mt5.initialize(' in contenido:
+  if 'mt5.' in linea or 'MetaTrader5' in linea:
+  if 'mt5' in contenido or 'MetaTrader5' in contenido:

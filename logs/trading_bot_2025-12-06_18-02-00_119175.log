@@ -1,0 +1,23 @@
+2025-12-06 18:02:00 | INFO     | __main__:main:448 - ============================================================
+2025-12-06 18:02:00 | INFO     | __main__:main:449 - INICIANDO BOT DE TRADING
+2025-12-06 18:02:00 | INFO     | __main__:main:450 - ============================================================
+2025-12-06 18:02:00 | INFO     | __main__:main:451 - Modo: cli
+2025-12-06 18:02:00 | INFO     | __main__:main:452 - Configuración: configs/config.yml
+2025-12-06 18:02:00 | INFO     | __main__:main:453 - Log level: INFO
+2025-12-06 18:02:00 | INFO     | __main__:modo_cli:81 - Iniciando modo línea de comandos...
+2025-12-06 18:02:00 | INFO     | core.bot:__init__:18 - Bot inicializado - Modo: real
+2025-12-06 18:02:00 | INFO     | __main__:modo_cli:89 - Inicializando módulos...
+2025-12-06 18:02:00 | INFO     | core.bot:inicializar_modulos:24 - Inicializando módulos del bot...
+2025-12-06 18:02:00 | INFO     | core.bot:inicializar_mt5:35 - Conectando a MT5...
+2025-12-06 18:02:00 | ERROR    | core.bot:inicializar_mt5:54 - ❌ Error conectando a MT5: MT5 Error -2: Invalid "login" argument
+2025-12-06 18:02:00 | ERROR    | __main__:modo_cli:119 - Error en modo CLI: No se pudo inicializar MT5
+2025-12-06 18:02:00 | ERROR    | __main__:modo_cli:121 - Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\Bots\Binance\bot 2\main.py", line 90, in modo_cli
+    bot.inicializar_modulos()
+  File "C:\Users\ASUS\Documents\Bots\Binance\bot 2\core\bot.py", line 28, in inicializar_modulos
+    raise Exception("No se pudo inicializar MT5")
+Exception: No se pudo inicializar MT5
+
+2025-12-06 18:02:00 | INFO     | __main__:main:480 - ============================================================
+2025-12-06 18:02:00 | INFO     | __main__:main:481 - BOT DE TRADING FINALIZADO
+2025-12-06 18:02:00 | INFO     | __main__:main:482 - ============================================================
